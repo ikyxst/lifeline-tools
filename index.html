@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>LIFELINE TOOLS</title>
+<meta name="description" content="Lifeline — 𝘞𝘦𝘣 𝘈𝘭𝘭 𝘛𝘰𝘰𝘭𝘴">
+<meta name="author" content="Ikyxnode">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lifeline Tools">
+<meta property="og:title" content="LIFELINE TOOLS">
+<meta property="og:description" content="Lifeline — 𝘞𝘦𝘣 𝘈𝘭𝘭 𝘛𝘰𝘰𝘭𝘴">
+<meta property="og:image" content="https://imagepaste.org/i/2z42bk8k.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LIFELINE TOOLS">
+<meta name="twitter:description" content="Lifeline — 𝘞𝘦𝘣 𝘈𝘭𝘭 𝘛𝘰𝘰𝘭𝘴">
+<meta name="twitter:image" content="https://imagepaste.org/i/2z42bk8k.jpg">
+<link rel="icon" type="image/png" href="https://imagepaste.org/i/2z42bk8k.jpg">
+<link rel="apple-touch-icon" href="https://imagepaste.org/i/2z42bk8k.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="banner.png" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg-base:#000000;--bg-card:#0d0d0d;--bg-card-hover:#151515;--bg-input:#101010;
+--bg-tag:rgba(255,255,255,.05);--bg-overlay:rgba(0,0,0,.85);--bg-drawer:#0a0a0a;
+--bg-drawer-hover:rgba(255,255,255,.05);--bg-banner:#0d0d0d;--bg-about:#0a0a0a;
+--border-soft:rgba(255,255,255,.08);--border-medium:rgba(255,255,255,.15);--border-strong:rgba(255,255,255,.4);
+--text-primary:#f5f5f5;--text-secondary:#a3a3a3;--text-muted:#6b6b6b;
+--accent-bright:#fff;--gradient-primary:linear-gradient(135deg,#f5f5f5 0%,#fff 100%);
+--gradient-text:linear-gradient(135deg,#fff 0%,#d4d4d4 50%,#8a8a8a 100%);
+--shadow-btn:0 4px 14px rgba(255,255,255,.1);--shadow-card-hover:0 8px 30px rgba(0,0,0,.7);
+--shadow-navbar:0 4px 20px rgba(0,0,0,.5);--shadow-banner:0 10px 40px rgba(0,0,0,.6);
+--navbar-bg:rgba(10,10,10,.85);--navbar-bg-scrolled:rgba(5,5,5,.95);
+--scroll-thumb-a:#333;--scroll-thumb-b:#0a0a0a;
+--logo-fg:#050505;
+--selection-bg:rgba(255,255,255,.18);
+--launch-bg:transparent;--launch-fg:var(--text-primary);--launch-border:var(--border-medium);
+--launch-bg-hover:var(--bg-tag);--launch-fg-hover:var(--text-primary);
+--launch-bg-active:var(--gradient-primary);--launch-fg-active:var(--logo-fg);
+--banner-overlay:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.15) 60%,rgba(0,0,0,.35) 100%)
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg-base);color:var(--text-primary);line-height:1.6;
+  min-height:100vh;overflow-x:hidden;position:relative;
+  -webkit-tap-highlight-color:transparent;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-3;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 10%, rgba(255,255,255,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 85% 90%, rgba(255,255,255,0.08) 0%, transparent 55%),
+    linear-gradient(180deg,#000000 0%,#000000 100%);
+  pointer-events:none;
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:0.4;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+}
+input{-webkit-user-select:text;user-select:text}
+.hero-banner img,.drawer-profile-avatar img{-webkit-user-drag:none;pointer-events:none}
+body.drawer-open, body.music-open, body.search-open{overflow:hidden}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;top:-100px;left:50%;transform:translateX(-50%);background:var(--gradient-primary);color:var(--logo-fg);padding:.75rem 1.5rem;border-radius:0 0 12px 12px;font-weight:700;text-decoration:none;z-index:9999;transition:top .2s;font-size:.9rem;white-space:nowrap}
+.skip-link:focus{top:0;outline:2px solid var(--accent-bright);outline-offset:4px}
+:focus-visible{outline:2px solid var(--accent-bright);outline-offset:2px}
+#tools:focus:not(:focus-visible){outline:none}
+#tools:focus-visible{outline:2px solid var(--accent-bright);outline-offset:4px}
+button,a,input{touch-action:manipulation}
+.kbd{display:inline-block;padding:.05rem .4rem;background:var(--bg-tag);border:1px solid var(--border-soft);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--text-secondary);line-height:1.5;font-weight:600}
+.only-desktop{display:none}
+@media (min-width:769px){.only-desktop{display:inline}}
+
+.container{max-width:1240px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:2}
+.navbar-wrapper{position:sticky;top:1rem;z-index:100;padding:0 1.5rem;pointer-events:none}
+.navbar{max-width:1140px;margin:0 auto;background:var(--navbar-bg);border:1px solid var(--border-soft);border-radius:18px;box-shadow:var(--shadow-navbar);pointer-events:auto;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:box-shadow .2s,background .2s,border-color .2s}
+.navbar.scrolled{background:var(--navbar-bg-scrolled);box-shadow:0 8px 32px rgba(0,0,0,.35)}
+.nav-content{display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 .85rem 0 1rem;gap:1rem;position:relative}
+.nav-left{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+.hamburger{width:38px;height:38px;border-radius:10px;background:transparent;border:1px solid var(--border-soft);color:var(--text-primary);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0;transition:background .2s,border-color .2s,transform .2s;flex-shrink:0}
+.hamburger:hover{background:var(--bg-tag);border-color:var(--border-strong)}
+.hamburger:active{transform:scale(.95)}
+.hamburger-line{display:block;width:18px;height:2px;background:currentColor;border-radius:2px;transition:transform .3s,opacity .2s;transform-origin:center}
+.hamburger.active .hamburger-line:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.hamburger.active .hamburger-line:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.active .hamburger-line:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;pointer-events:none;user-select:none;z-index:1}
+.logo-title{font-weight:800;font-size:1.05rem;letter-spacing:.18em;color:var(--text-primary);white-space:nowrap;text-align:center}
+.nav-links{display:flex;gap:1.75rem;margin-left:auto}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text-primary)}
+.nav-actions{display:flex;align-items:center;gap:.5rem}
+.nav-cta{display:flex;align-items:center;gap:.4rem;padding:.55rem 1rem;background:var(--gradient-primary);color:var(--logo-fg);border:none;border-radius:11px;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s;box-shadow:var(--shadow-btn)}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.nav-cta:active{transform:translateY(0)}
+.navbar-spacer{height:1rem}
+.drawer-overlay{position:fixed;inset:0;background:var(--bg-overlay);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:190;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.drawer-overlay.active{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;left:0;height:100vh;height:100dvh;width:340px;max-width:88vw;background:var(--bg-drawer);border-right:1px solid var(--border-soft);z-index:200;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow:hidden;box-shadow:8px 0 40px rgba(0,0,0,.3)}
+.drawer.active{transform:translateX(0)}
+.drawer-profile{position:relative;padding:2.25rem 1.5rem 1.5rem;border-bottom:1px solid var(--border-soft);display:flex;flex-direction:column;align-items:center;text-align:center;gap:.85rem;flex-shrink:0}
+.drawer-close{position:absolute;top:1rem;right:1rem;width:32px;height:32px;border-radius:8px;background:transparent;border:1px solid var(--border-soft);color:var(--text-secondary);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .2s;z-index:2}
+.drawer-close:hover{background:var(--bg-tag);border-color:var(--border-strong);color:var(--text-primary);transform:rotate(90deg)}
+.drawer-close svg{width:14px;height:14px}
+.drawer-profile-avatar{width:112px;height:112px;border-radius:50%;background:var(--gradient-primary);color:var(--logo-fg);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:2.4rem;border:2px solid var(--border-medium);box-shadow:var(--shadow-btn);overflow:hidden;position:relative;flex-shrink:0}
+.drawer-profile-avatar img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%}
+.drawer-profile-name{font-size:1.1rem;font-weight:800;letter-spacing:.1em;color:var(--text-primary);text-transform:uppercase;line-height:1.2}
+.drawer-body{flex:1 1 auto;min-height:0;padding:1.5rem;display:flex;flex-direction:column;gap:1.75rem;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.drawer-section-title{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.75rem;font-family:'JetBrains Mono',monospace}
+.drawer-item{display:flex;align-items:center;gap:.85rem;padding:.75rem .9rem;border-radius:10px;color:var(--text-primary);text-decoration:none;font-size:.9rem;font-weight:500;background:transparent;border:1px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,transform .2s;font-family:inherit;width:100%;text-align:left}
+.drawer-item:hover{background:var(--bg-drawer-hover);border-color:var(--border-soft);transform:translateX(3px)}
+.drawer-item-icon{width:32px;height:32px;border-radius:8px;background:var(--bg-tag);border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text-primary);transition:background .2s,border-color .2s,color .2s}
+.drawer-item:hover .drawer-item-icon{background:var(--gradient-primary);color:var(--logo-fg);border-color:transparent}
+.drawer-item-icon svg{width:16px;height:16px}
+.drawer-item-text{display:flex;flex-direction:column;line-height:1.2}
+.drawer-item-label{font-weight:600;font-size:.88rem}
+.drawer-item-desc{font-size:.72rem;color:var(--text-muted);margin-top:2px}
+.drawer-footer{flex-shrink:0;padding:1.25rem 1.5rem;padding-bottom:calc(1.25rem + env(safe-area-inset-bottom,0px));border-top:1px solid var(--border-soft);background:var(--bg-drawer);position:relative;z-index:1}
+.drawer-footer-text{font-size:.72rem;color:var(--text-muted);line-height:1.5;text-align:center}
+.drawer-footer-text strong{background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700}
+
+.hero{padding:3rem 0 1.5rem}
+.hero-center{display:flex;flex-direction:column;align-items:center;text-align:center}
+.hero-banner{position:relative;width:100%;max-width:900px;margin:0 auto;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:var(--bg-banner);border:1px solid var(--border-soft);box-shadow:var(--shadow-banner);cursor:default;pointer-events:none;user-select:none}
+.hero-banner img{width:100%;height:100%;object-fit:cover;display:block;border-radius:18px;pointer-events:none;user-select:none;-webkit-user-drag:none}
+.hero-banner::after{content:"";position:absolute;inset:0;background:var(--banner-overlay);pointer-events:none;border-radius:18px}
+
+.profile-section {padding: 1rem 0 2rem; position: relative; z-index: 2;}
+.profile-card {display: flex; align-items: center; gap: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: 20px; padding: 1.25rem 2rem; max-width: 650px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5); position: relative; overflow: hidden;}
+.profile-avatar {width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--text-muted); padding: 2px; background: var(--bg-input); box-shadow: 0 0 20px rgba(255, 255, 255, 0.05); flex-shrink: 0; z-index: 1; overflow: hidden;}
+.profile-avatar img {width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;}
+.profile-content {flex: 1; z-index: 1; min-width: 0;}
+.profile-name {font-size: 1.25rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.6rem; letter-spacing: 0.02em;}
+.profile-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 1rem;}
+.p-item {display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); font-weight: 500; white-space: nowrap;}
+.p-item svg {width: 16px; height: 16px; color: var(--text-primary); flex-shrink: 0;}
+.p-item.online {color: var(--text-primary); font-weight: 700;}
+.p-item.online svg {color: var(--text-primary);}
+
+.search-overlay {position: fixed; inset: 0; background: rgba(0,0,0,.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 950; opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility .3s ease; pointer-events: none;}
+.search-overlay.show {opacity: 1; visibility: visible; pointer-events: auto;}
+.search-modal {position: fixed; top: 15%; left: 50%; transform: translate(-50%, -20px) scale(0.98); z-index: 951; width: min(600px, calc(100vw - 2rem)); background: var(--bg-card); border: 1px solid var(--border-medium); border-radius: 18px; box-shadow: 0 24px 60px rgba(0,0,0,.85), 0 0 0 1px rgba(255,255,255,.05) inset; padding: 1.25rem; opacity: 0; visibility: hidden; transition: opacity .3s cubic-bezier(.22,1,.36,1), transform .3s cubic-bezier(.22,1,.36,1), visibility .3s ease; pointer-events: none; display: flex; flex-direction: column; gap: 1rem;}
+.search-modal.show {opacity: 1; visibility: visible; transform: translate(-50%, 0) scale(1); pointer-events: auto;}
+.search-modal .search-box {position: relative; width: 100%;}
+.search-modal .search-input {width: 100%; padding: .95rem 3rem .95rem 2.9rem; background: var(--bg-input); border: 1px solid var(--border-medium); border-radius: 12px; color: var(--text-primary); font-size: 1rem; font-family: inherit; outline: none; transition: border-color .2s, box-shadow .2s;}
+.search-modal .search-input:focus {border-color: var(--accent-bright); box-shadow: 0 0 0 3px var(--bg-tag);}
+.search-modal .search-icon {position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--text-muted); pointer-events: none;}
+.search-modal .search-clear {position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 6px; background: var(--bg-tag); border: none; color: var(--text-muted); cursor: pointer; display: none; align-items: center; justify-content: center; transition: background .2s, color .2s;}
+.search-modal .search-clear.visible {display: flex;}
+.search-modal .search-clear:hover {background: var(--bg-drawer-hover); color: var(--text-primary);}
+.search-modal .search-clear svg {width: 12px; height: 12px;}
+.search-modal-footer {display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;}
+.search-hint{font-size:.72rem;color:var(--text-muted);line-height:1.6}
+.search-hint .kbd{margin:0 .1rem}
+.search-close-btn {padding: .5rem 1rem; background: var(--bg-tag); border: 1px solid var(--border-soft); border-radius: 8px; color: var(--text-secondary); font-family: inherit; font-size: .85rem; font-weight: 600; cursor: pointer; transition: background .2s, color .2s;}
+.search-close-btn:hover {background: var(--bg-card-hover); color: var(--text-primary);}
+
+.section{padding:1rem 0 3rem;position:relative}
+.section-header{margin-bottom:1.75rem}
+.section-header h2{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;letter-spacing:-.02em;color:var(--text-primary)}
+#tools .section-header h2{display:flex;align-items:center;justify-content:center;gap:1.25rem}
+#tools .section-header h2::before,#tools .section-header h2::after{content:"";flex:1;max-width:240px;height:1px;background:linear-gradient(90deg,transparent,var(--border-strong))}
+#tools .section-header h2::after{background:linear-gradient(90deg,var(--border-strong),transparent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1rem;align-items:stretch;list-style:none}
+.card{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:.65rem;padding:1.1rem .9rem;background:var(--bg-card);border:1px solid var(--border-soft);border-radius:16px;color:inherit;text-align:center;overflow:hidden;transition:transform .2s,border-color .2s,background .2s,box-shadow .2s;cursor:default}
+.card:hover{transform:translateY(-4px);border-color:var(--border-strong);background:var(--bg-card-hover);box-shadow:var(--shadow-card-hover)}
+.card-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:var(--bg-tag);border:1px solid var(--border-soft);color:var(--text-primary);transition:background .2s,border-color .2s,color .2s,transform .2s;flex-shrink:0;margin-top:.4rem}
+.card-icon svg{width:22px;height:22px}
+.card:hover .card-icon{background:var(--gradient-primary);color:var(--logo-fg);border-color:transparent;transform:scale(1.06)}
+.card-title{font-size:.8rem;font-weight:700;color:var(--text-primary);letter-spacing:-.01em;line-height:1.25;transition:color .2s;padding:0 .25rem;min-height:2rem;display:flex;align-items:center;justify-content:center}
+.card:hover .card-title{color:var(--accent-bright)}
+.card-launch{display:inline-flex;align-items:center;justify-content:center;gap:.3rem;padding:.4rem .75rem;font-size:.68rem;font-weight:700;letter-spacing:.02em;font-family:inherit;color:var(--launch-fg);background:var(--launch-bg);border:1px solid var(--launch-border);border-radius:8px;cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .15s;width:100%;margin-top:auto;text-decoration:none}
+.card-launch svg{width:11px;height:11px;transition:transform .2s}
+.card-launch:hover{background:var(--launch-bg-hover);color:var(--launch-fg-hover);border-color:var(--border-strong)}
+.card-launch:hover svg{transform:translateX(2px)}
+.card-launch:active{background:var(--launch-bg-active);color:var(--launch-fg-active);border-color:transparent;transform:scale(.97)}
+.card-launch.disabled{opacity:.5;cursor:not-allowed;pointer-events:none;background:transparent;color:var(--text-muted);border-color:var(--border-soft)}
+.card:has(.card-launch.disabled):hover{transform:none;border-color:var(--border-soft);background:var(--bg-card);box-shadow:none}
+.card:has(.card-launch.disabled):hover .card-icon{background:var(--bg-tag);color:var(--text-primary);border-color:var(--border-soft);transform:none}
+.card:has(.card-launch.disabled):hover .card-title{color:var(--text-primary)}
+.card:has(.card-launch.disabled) .card-title{color:var(--text-secondary)}
+
+.empty-state{text-align:center;padding:3rem 1rem;color:var(--text-muted);display:none;margin-bottom:2rem}
+.empty-state.visible{display:block}
+.empty-state svg{width:48px;height:48px;margin-bottom:1rem;opacity:.5}
+.empty-state h3{font-size:1.1rem;font-weight:700;color:var(--text-secondary);margin-bottom:.4rem}
+.empty-state p{font-size:.9rem}
+
+.about-section{padding:2rem 0 3rem;position:relative;z-index:2}
+.about-card{max-width:720px;margin:0 auto;padding:2rem;background:var(--bg-about);border:1px solid var(--border-soft);border-radius:18px;text-align:center}
+.about-text{font-size:1rem;color:var(--text-secondary);line-height:1.8;margin-bottom:1.5rem}
+.about-signature{font-size:.85rem;color:var(--text-muted);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--border-soft)}
+.about-signature strong{background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700}
+.footer{border-top:1px solid var(--border-soft);padding:2rem 0;margin-top:3rem;position:relative;z-index:2;text-align:center}
+.footer-copy{color:var(--text-muted);font-size:.85rem;display:flex;flex-direction:column;gap:.4rem;align-items:center}
+.footer-watermark{font-size:.75rem;color:var(--text-muted);opacity:.8;letter-spacing:.03em}
+.scroll-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:12px;background:var(--gradient-primary);color:var(--logo-fg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-btn);opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .25s,transform .25s;z-index:50}
+.scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.scroll-top:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.scroll-top svg{width:18px;height:18px}
+
+@media (max-width:768px){
+.navbar-wrapper{top:.75rem;padding:0 1rem}
+.nav-links{display:none}
+.nav-content{height:58px;padding:0 .65rem 0 .8rem}
+.logo-title{font-size:.95rem;letter-spacing:.14em}
+.hero{padding:2.5rem 0 1rem}
+.hero-banner{max-width:100%;border-radius:16px}
+.hero-banner img,.hero-banner::after{border-radius:16px}
+.grid{grid-template-columns:repeat(2,1fr);gap:.85rem}
+.card{padding:1rem .8rem;gap:.55rem}
+.card-icon{width:40px;height:40px;border-radius:10px}
+.card-icon svg{width:20px;height:20px}
+.card-title{font-size:.76rem;min-height:1.85rem}
+.card-launch{font-size:.65rem;padding:.35rem .65rem}
+.drawer{width:320px}
+.drawer-profile{padding:2rem 1.25rem 1.25rem;gap:.75rem}
+.drawer-profile-avatar{width:96px;height:96px;font-size:2rem}
+.drawer-profile-name{font-size:1.05rem;letter-spacing:.08em}
+.drawer-body{padding:1.25rem;gap:1.5rem}
+.drawer-footer{padding:1rem 1.25rem;padding-bottom:calc(1rem + env(safe-area-inset-bottom,0px))}
+.about-card{padding:1.5rem}
+.profile-card{flex-direction:row; padding:1rem; gap:1rem; max-width:100%; border-radius:16px}
+.profile-avatar{width:75px; height:75px}
+.profile-name{font-size:1.1rem; margin-bottom:0.4rem}
+.p-item{font-size:0.75rem; gap:0.35rem}
+.p-item svg{width:14px; height:14px}
+.search-modal{top:10%; padding:1rem;}
+.search-hint{font-size:.68rem}
+#tools .section-header h2{gap:.85rem}
+#tools .section-header h2::before,#tools .section-header h2::after{max-width:120px}
+}
+@media (max-width:480px){
+.container{padding:0 1rem}
+.navbar-wrapper{padding:0 .75rem;top:.5rem}
+.navbar{border-radius:14px}
+.nav-content{height:54px;gap:.6rem}
+.nav-cta span{display:none}
+.nav-cta{padding:.55rem .7rem}
+.logo-title{font-size:.88rem;letter-spacing:.12em}
+.hamburger{width:34px;height:34px}
+.hamburger-line{width:16px}
+.hamburger.active .hamburger-line:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.hamburger.active .hamburger-line:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.scroll-top{bottom:1.25rem;right:1.25rem;width:40px;height:40px}
+.hero-banner{border-radius:14px}
+.hero-banner img,.hero-banner::after{border-radius:14px}
+.drawer{width:88vw}
+.drawer-profile{padding:1.75rem 1rem 1.25rem;gap:.7rem}
+.drawer-profile-avatar{width:88px;height:88px;font-size:1.85rem}
+.drawer-profile-name{font-size:1rem;letter-spacing:.07em}
+.grid{gap:.7rem}
+.card{padding:.9rem .7rem;gap:.5rem;border-radius:14px}
+.card-icon{width:36px;height:36px;border-radius:10px}
+.card-icon svg{width:18px;height:18px}
+.card-title{font-size:.72rem;min-height:1.7rem}
+.card-launch{font-size:.6rem;padding:.3rem .55rem;border-radius:7px}
+.card-launch svg{width:10px;height:10px}
+.about-card{padding:1.25rem;border-radius:14px}
+.about-text{font-size:.9rem;line-height:1.7}
+.profile-card{padding:0.8rem; gap:0.8rem}
+.profile-avatar{width:65px; height:65px; border-width:2px}
+.profile-name{font-size:1rem; margin-bottom:0.3rem}
+.profile-grid{grid-template-columns:1fr 1fr; gap:0.3rem 0.5rem}
+.p-item{font-size:0.65rem; gap:0.25rem}
+.p-item svg{width:12px; height:12px}
+#tools .section-header h2{gap:.65rem}
+#tools .section-header h2::before,#tools .section-header h2::after{max-width:60px}
+}
+@media (max-height:600px){
+.drawer-profile{padding:1.25rem 1.25rem 1rem;gap:.55rem}
+.drawer-profile-avatar{width:76px;height:76px;font-size:1.6rem}
+.drawer-profile-name{font-size:.95rem}
+.drawer-body{padding:1rem;gap:1rem}
+.drawer-footer{padding:.85rem 1.25rem;padding-bottom:calc(.85rem + env(safe-area-inset-bottom,0px))}
+}
+@media (max-width:768px){body::after{display:none}}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--bg-base)}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--scroll-thumb-a) 0%,var(--scroll-thumb-b) 100%);border-radius:10px;border:2px solid var(--bg-base)}
+::selection{background:var(--selection-bg);color:var(--text-primary)}
+@media (prefers-reduced-motion:reduce){
+*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+body.tt-notif-open{overflow:hidden}
+.tt-notif-overlay{position:fixed;inset:0;z-index:998;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s ease;pointer-events:none}
+.tt-notif-overlay.show{opacity:1;visibility:visible;pointer-events:auto}
+.tt-notif{position:fixed;top:50%;left:50%;z-index:999;width:min(380px,calc(100vw - 2rem));padding:2rem 1.75rem 1.75rem;background:rgba(13,13,13,.98);border:1px solid var(--border-medium);border-radius:20px;box-shadow:0 24px 60px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.03) inset,0 0 60px rgba(255,255,255,.06);text-align:center;display:flex;flex-direction:column;align-items:center;opacity:0;visibility:hidden;transform:translate(-50%,-50%) scale(.9);transition:opacity .35s cubic-bezier(.22,1,.36,1),transform .35s cubic-bezier(.22,1,.36,1),visibility .35s ease;pointer-events:none}
+.tt-notif.show{opacity:1;visibility:visible;transform:translate(-50%,-50%) scale(1);pointer-events:auto}
+.tt-notif::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:2px;border-radius:999px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent)}
+.tt-notif-icon{width:72px;height:72px;border-radius:20px;background:var(--gradient-primary);color:var(--logo-fg);display:grid;place-items:center;margin-bottom:1.25rem;box-shadow:0 8px 24px rgba(255,255,255,.15);animation:ttIconPulse 2.4s ease-in-out infinite}
+.tt-notif-icon svg{width:36px;height:36px}
+@keyframes ttIconPulse{0%,100%{transform:scale(1);box-shadow:0 8px 24px rgba(255,255,255,.15)}50%{transform:scale(1.05);box-shadow:0 8px 32px rgba(255,255,255,.3)}}
+.tt-notif-label{display:inline-flex;align-items:center;justify-content:center;padding:.3rem .85rem;background:var(--bg-tag);border:1px solid var(--border-soft);border-radius:999px;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:.9rem;font-family:'JetBrains Mono',monospace}
+.tt-notif-title{font-size:1.15rem;font-weight:800;letter-spacing:-.01em;color:var(--text-primary);margin-bottom:.5rem;line-height:1.3}
+.tt-notif-desc{font-size:.85rem;color:var(--text-secondary);line-height:1.6;margin-bottom:1.5rem;max-width:280px}
+.tt-notif-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;width:100%;padding:.85rem 1.25rem;background:var(--gradient-primary);color:var(--logo-fg);border:none;border-radius:12px;font-size:.9rem;font-weight:700;font-family:inherit;text-decoration:none;cursor:pointer;box-shadow:var(--shadow-btn);transition:transform .2s,box-shadow .2s}
+.tt-notif-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,255,255,.2)}
+.tt-notif-btn:active{transform:translateY(0)}
+.tt-notif-btn svg{width:16px;height:16px}
+.tt-notif-skip{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:.7rem 1rem;margin-top:.5rem;background:transparent;border:1px solid var(--border-soft);border-radius:12px;color:var(--text-secondary);font-size:.85rem;font-weight:600;font-family:inherit;cursor:pointer;transition:color .2s,background .2s,border-color .2s,transform .15s}
+.tt-notif-skip:hover{color:var(--text-primary);background:var(--bg-tag);border-color:var(--border-medium)}
+.tt-notif-skip:active{transform:scale(.98)}
+.tt-notif-countdown{width:100%;margin-top:1.25rem}
+.tt-notif-progress-track{width:100%;height:4px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
+.tt-notif-progress{height:100%;width:100%;background:linear-gradient(90deg,rgba(255,255,255,.4),#fff);border-radius:999px;transition:width .05s linear;will-change:width}
+.tt-notif-timer-text{margin-top:.6rem;font-size:.7rem;color:var(--text-muted);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;text-align:center;line-height:1}
+.tt-notif-timer-text span{color:var(--text-primary);font-weight:700;display:inline-block;min-width:1.5ch;text-align:center}
+@media (max-width:480px){
+  .tt-notif{width:calc(100vw - 1.5rem);padding:1.75rem 1.35rem 1.5rem;border-radius:16px}
+  .tt-notif-icon{width:64px;height:64px;border-radius:16px;margin-bottom:1rem}
+  .tt-notif-icon svg{width:32px;height:32px}
+  .tt-notif-title{font-size:1.05rem}
+  .tt-notif-desc{font-size:.82rem;margin-bottom:1.25rem;max-width:100%}
+  .tt-notif-btn{padding:.8rem 1rem;font-size:.85rem}
+  .tt-notif-skip{padding:.65rem .9rem;font-size:.8rem}
+  .tt-notif-countdown{margin-top:1rem}
+}
+@media (max-height:600px){
+  .tt-notif{padding:1.5rem 1.35rem 1.35rem;max-height:calc(100vh - 1rem);overflow-y:auto}
+  .tt-notif-icon{width:56px;height:56px;border-radius:14px;margin-bottom:.85rem}
+  .tt-notif-icon svg{width:28px;height:28px}
+  .tt-notif-label{margin-bottom:.7rem}
+  .tt-notif-title{font-size:1rem}
+  .tt-notif-desc{margin-bottom:1rem;font-size:.8rem}
+  .tt-notif-btn{padding:.7rem 1rem;font-size:.82rem}
+  .tt-notif-skip{padding:.6rem .9rem;font-size:.78rem;margin-top:.4rem}
+  .tt-notif-countdown{margin-top:.9rem}
+}
+
+.music-overlay{position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s ease;pointer-events:none}
+.music-overlay.show{opacity:1;visibility:visible;pointer-events:auto}
+.music-modal{position:fixed;top:50%;left:50%;z-index:901;width:min(520px,calc(100vw - 2rem));max-height:calc(100vh - 2rem);padding:1.5rem;background:rgba(13,13,13,.98);border:1px solid var(--border-medium);border-radius:20px;box-shadow:0 24px 60px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.03) inset,0 0 60px rgba(255,255,255,.06);display:flex;flex-direction:column;gap:1rem;opacity:0;visibility:hidden;transform:translate(-50%,-50%) scale(.9);transition:opacity .35s cubic-bezier(.22,1,.36,1),transform .35s cubic-bezier(.22,1,.36,1),visibility .35s ease;pointer-events:none;overflow:hidden}
+.music-modal.show{opacity:1;visibility:visible;transform:translate(-50%,-50%) scale(1);pointer-events:auto}
+.music-modal::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:2px;border-radius:999px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent)}
+.music-header{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.music-header-icon{width:40px;height:40px;border-radius:12px;background:var(--gradient-primary);color:var(--logo-fg);display:grid;place-items:center;flex-shrink:0;box-shadow:0 4px 14px rgba(255,255,255,.15)}
+.music-header-icon svg{width:20px;height:20px}
+.music-header-title{flex:1;font-size:.95rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--text-primary);font-family:'JetBrains Mono',monospace}
+.music-close{width:32px;height:32px;border-radius:8px;background:transparent;border:1px solid var(--border-soft);color:var(--text-secondary);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .2s;padding:0;flex-shrink:0}
+.music-close:hover{background:var(--bg-tag);border-color:var(--border-strong);color:var(--text-primary);transform:rotate(90deg)}
+.music-close svg{width:14px;height:14px}
+
+.music-player{background:var(--bg-input);border:1px solid var(--border-soft);border-radius:14px;padding:1rem;display:flex;flex-direction:column;gap:.85rem;flex-shrink:0}
+.music-now{display:flex;align-items:center;gap:.75rem;min-width:0}
+.music-now-icon{width:44px;height:44px;border-radius:12px;background:var(--bg-tag);border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text-primary);font-size:1.3rem;transition:transform .3s}
+.music-now-icon.playing{animation:pulseIcon 1.8s ease-in-out infinite}
+@keyframes pulseIcon{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.music-now-text{display:flex;flex-direction:column;gap:.15rem;min-width:0;flex:1}
+.music-now-label{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-family:'JetBrains Mono',monospace}
+.music-now-title{font-size:.88rem;font-weight:700;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.music-seek{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:999px;background:rgba(255,255,255,.1);outline:none;cursor:pointer;transition:background .2s}
+.music-seek::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:#fff;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.4);transition:transform .15s}
+.music-seek::-webkit-slider-thumb:hover{transform:scale(1.2)}
+.music-seek::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:none;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+
+.music-time{display:flex;justify-content:space-between;font-size:.68rem;color:var(--text-muted);font-family:'JetBrains Mono',monospace;letter-spacing:.04em;margin-top:-.35rem}
+
+.music-controls{display:flex;align-items:center;justify-content:center;gap:.75rem}
+.music-btn{width:42px;height:42px;border-radius:50%;background:var(--bg-tag);border:1px solid var(--border-soft);color:var(--text-primary);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,border-color .2s,transform .15s;padding:0;flex-shrink:0}
+.music-btn:hover{background:var(--bg-drawer-hover);border-color:var(--border-strong)}
+.music-btn:active{transform:scale(.92)}
+.music-btn svg{width:18px;height:18px}
+.music-btn-play{width:52px;height:52px;background:var(--gradient-primary);color:var(--logo-fg);border-color:transparent;box-shadow:0 4px 14px rgba(255,255,255,.15)}
+.music-btn-play:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,255,255,.25);background:var(--gradient-primary)}
+.music-btn-play svg{width:20px;height:20px}
+.music-btn:disabled{opacity:.35;cursor:not-allowed;pointer-events:none}
+
+.music-volume-row{display:flex;align-items:center;gap:.5rem}
+.music-volume-row svg{width:16px;height:16px;color:var(--text-secondary);flex-shrink:0}
+.music-volume{-webkit-appearance:none;appearance:none;flex:1;height:4px;border-radius:999px;background:rgba(255,255,255,.1);outline:none;cursor:pointer}
+.music-volume::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:12px;height:12px;border-radius:50%;background:#fff;cursor:pointer}
+.music-volume::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:#fff;border:none;cursor:pointer}
+
+.music-upload-row{display:flex;gap:.5rem;flex-shrink:0}
+.music-upload-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.7rem 1rem;border-radius:10px;border:1px dashed var(--border-medium);background:var(--bg-tag);color:var(--text-primary);font-family:inherit;font-size:.82rem;font-weight:600;cursor:pointer;transition:background .2s,border-color .2s}
+.music-upload-btn:hover{background:rgba(255,255,255,.08);border-color:var(--border-strong);border-style:solid}
+.music-upload-btn svg{width:16px;height:16px}
+.music-input{display:none}
+
+.music-playlist-label{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-family:'JetBrains Mono',monospace;margin-bottom:.5rem;flex-shrink:0}
+.music-playlist{flex:1;min-height:120px;max-height:220px;overflow-y:auto;display:flex;flex-direction:column;gap:.25rem;padding-right:.25rem}
+.music-track{position:relative;display:flex;align-items:center;gap:.75rem;padding:.6rem .75rem;border-radius:10px;border:1px solid transparent;cursor:pointer;transition:background .15s,border-color .15s;background:transparent}
+.music-track:hover{background:var(--bg-tag);border-color:var(--border-soft)}
+.music-track.active{background:rgba(255,255,255,.06);border-color:var(--border-strong)}
+.music-track-icon{width:30px;height:30px;border-radius:8px;background:var(--bg-tag);border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text-secondary);font-size:.85rem}
+.music-track.active .music-track-icon{background:var(--gradient-primary);color:var(--logo-fg);border-color:transparent}
+.music-track-info{display:flex;flex-direction:column;gap:.1rem;min-width:0;flex:1}
+.music-track-name{font-size:.8rem;font-weight:600;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.music-track-meta{font-size:.65rem;color:var(--text-muted);font-family:'JetBrains Mono',monospace}
+.music-track-remove{width:24px;height:24px;border-radius:6px;background:transparent;border:1px solid transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;flex-shrink:0;transition:all .15s;opacity:.6}
+.music-track-remove:hover{opacity:1;background:rgba(255,255,255,.08);border-color:var(--border-soft);color:var(--text-primary)}
+.music-track-remove svg{width:12px;height:12px}
+.music-empty{text-align:center;padding:1.5rem 1rem;color:var(--text-muted);font-size:.8rem;font-style:italic}
+
+@media (max-width:480px){
+  .music-modal{padding:1.25rem;border-radius:16px;gap:.85rem}
+  .music-header-icon{width:34px;height:34px;border-radius:10px}
+  .music-header-icon svg{width:18px;height:18px}
+  .music-header-title{font-size:.82rem}
+  .music-player{padding:.85rem;gap:.7rem}
+  .music-now-icon{width:38px;height:38px;border-radius:10px;font-size:1.15rem}
+  .music-now-title{font-size:.82rem}
+  .music-btn{width:38px;height:38px}
+  .music-btn svg{width:16px;height:16px}
+  .music-btn-play{width:46px;height:46px}
+  .music-btn-play svg{width:18px;height:18px}
+  .music-playlist{max-height:160px}
+  .music-track{padding:.5rem .6rem;gap:.6rem}
+  .music-track-name{font-size:.75rem}
+  .music-track-meta{font-size:.6rem}
+}
+@media (max-height:640px){
+  .music-modal{padding:1rem 1.15rem;gap:.7rem;max-height:calc(100vh - 1rem);overflow-y:auto}
+  .music-player{padding:.75rem;gap:.6rem}
+  .music-now-icon{width:36px;height:36px}
+  .music-playlist{max-height:140px;min-height:80px}
+  .music-btn-play{width:44px;height:44px}
+  .music-btn{width:36px;height:36px}
+}
+</style>
+</head>
+<body>
+
+<a href="#tools" class="skip-link">Langsung ke daftar tools</a>
+
+<div class="navbar-wrapper">
+<header class="navbar" id="navbar">
+<div class="nav-content">
+<div class="nav-left">
+<button class="hamburger" id="hamburgerBtn" type="button" aria-label="Buka menu" aria-expanded="false">
+<span class="hamburger-line"></span>
+<span class="hamburger-line"></span>
+<span class="hamburger-line"></span>
+</button>
+</div>
+<div class="logo">
+<span class="logo-title">LIFELINE TOOLS</span>
+</div>
+<nav class="nav-links" aria-label="Navigasi utama">
+<a href="#tools">Tools</a>
+</nav>
+<div class="nav-actions">
+<button class="nav-cta" id="navSearchBtn" type="button" title="Cari (Ctrl+K)">
+<span>Cari</span>
+<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+</button>
+</div>
+</div>
+</header>
+</div>
+
+<div class="navbar-spacer"></div>
+
+<section class="hero">
+<div class="container hero-center">
+<div class="hero-banner">
+<img src="banner.png" alt="Lifeline Tools Banner" fetchpriority="high" decoding="async">
+</div>
+</div>
+</section>
+
+<section class="profile-section">
+  <div class="container">
+    <div class="profile-card">
+      <div class="profile-avatar">
+        <img src="profil.png" alt="Profile Avatar" decoding="async">
+      </div>
+      <div class="profile-content">
+        <h2 class="profile-name">Lifeline Tools</h2>
+        <div class="profile-grid">
+          <div class="p-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span>🇮🇩 Indonesia</span>
+          </div>
+          <div class="p-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <span id="device-os">Android</span>
+          </div>
+          <div class="p-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/></svg>
+            <span id="battery-level">100%</span>
+          </div>
+          <div class="p-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="live-clock">00:00:00</span>
+          </div>
+          <div class="p-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            <span id="browser-name">Chrome</span>
+          </div>
+          <div class="p-item online">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            <span>Online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+<div class="empty-state" id="emptyState">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+<h3>Tidak ada tools yang ditemukan</h3>
+<p>Coba kata kunci lain</p>
+</div>
+</div>
+
+<section class="section" id="tools" tabindex="-1">
+<div class="container">
+<div class="section-header">
+<h2>All Tools</h2>
+</div>
+<div class="grid" id="maker-grid" role="list" aria-label="Daftar tools"></div>
+<div id="searchStatus" class="sr-only" aria-live="polite"></div>
+</div>
+</section>
+
+<section class="about-section" id="about">
+<div class="container">
+<div class="section-header">
+<h2>Information</h2>
+</div>
+<div class="about-card">
+<p class="about-text">‎WEB Ini masih dalam proses pengembangan. Jadilah salah satu yang pertama kali mencobanya.
+</p>
+<p class="about-signature">Created by <strong>Ikyxnode</strong></p>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<p class="footer-copy">
+<span class="footer-watermark">© <span id="year"></span> Lifeline</span>
+</p>
+</div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" type="button" aria-label="Kembali ke atas">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+</button>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Menu utama">
+<div class="drawer-profile">
+<button class="drawer-close" id="drawerClose" type="button" aria-label="Tutup menu">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+</button>
+<div class="drawer-profile-avatar"><img src="profil.png" alt="Profil Lifeline Tools" loading="lazy" decoding="async"></div>
+<div class="drawer-profile-name">Lifeline Tools</div>
+</div>
+<div class="drawer-body">
+<div>
+<div class="drawer-section-title">Menu</div>
+<a href="#about" class="drawer-item" data-drawer-link>
+<span class="drawer-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></span>
+<span class="drawer-item-text"><span class="drawer-item-label">Information</span><span class="drawer-item-desc">Tentang Lifeline Tools</span></span>
+</a>
+<button class="drawer-item" id="searchToolsBtn" type="button">
+<span class="drawer-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+<span class="drawer-item-text"><span class="drawer-item-label">Search Tools</span><span class="drawer-item-desc">Filter tools sesuai kebutuhan</span></span>
+</button>
+</div>
+<div>
+<div class="drawer-section-title">Support</div>
+<a href="https://www.tiktok.com/@kyyx07z" target="_blank" rel="noopener noreferrer" class="drawer-item">
+<span class="drawer-item-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3h-2.6v12.1a2.6 2.6 0 1 1-2.6-2.6c.2 0 .4 0 .6.1V9.9a5.3 5.3 0 1 0 4.6 5.2V8.4a6.6 6.6 0 0 0 4 1.4V7.2a4.1 4.1 0 0 0-4-4.2z"/></svg></span>
+<span class="drawer-item-text"><span class="drawer-item-label">Follow My TikTok</span><span class="drawer-item-desc">@kyyx07z</span></span>
+</a>
+</div>
+</div>
+<div class="drawer-footer">
+<p class="drawer-footer-text">That<strong> Simple</strong><br>© <span id="yearDrawer"></span> Lifeline</p>
+</div>
+</aside>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true"></div>
+<div class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-label="Pencarian tools" aria-hidden="true">
+  <div class="search-box">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    <input type="text" class="search-input" id="searchInput" placeholder="Cari tools..." autocomplete="off" inputmode="search" enterkeyhint="search" spellcheck="false" autocapitalize="none" aria-label="Cari tools">
+    <button class="search-clear" id="searchClear" type="button" aria-label="Hapus pencarian">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+  <div class="search-modal-footer">
+    <span class="search-hint"><kbd class="kbd">Esc</kbd> tutup<span class="only-desktop"> · <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">K</kbd> buka</span></span>
+    <button class="search-close-btn" id="searchCloseBtn" type="button">Tutup</button>
+  </div>
+</div>
+
+<div class="tt-notif-overlay" id="ttNotifOverlay" aria-hidden="true"></div>
+<div class="tt-notif" id="ttNotif" role="alertdialog" aria-modal="true" aria-labelledby="ttNotifTitle" aria-hidden="true">
+  <div class="tt-notif-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3h-2.6v12.1a2.6 2.6 0 1 1-2.6-2.6c.2 0 .4 0 .6.1V9.9a5.3 5.3 0 1 0 4.6 5.2V8.4a6.6 6.6 0 0 0 4 1.4V7.2a4.1 4.1 0 0 0-4-4.2z"/></svg></div>
+  <div class="tt-notif-label"><span>Support</span></div>
+  <h3 class="tt-notif-title" id="ttNotifTitle">Follow My TikTok</h3>
+  <p class="tt-notif-desc">𝘚𝘶𝘱𝘱𝘰𝘳𝘵 𝘦𝘵𝘮𝘪𝘯 𝘥𝘦𝘯𝘨𝘢𝘯 𝘮𝘦𝘯𝘨𝘪𝘬𝘶𝘵𝘪 𝘢𝘬𝘶𝘯 𝘵𝘪𝘬𝘵𝘰𝘬!</p>
+  <a href="https://www.tiktok.com/@kyyx07z" target="_blank" rel="noopener noreferrer" class="tt-notif-btn" id="ttNotifFollow">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3h-2.6v12.1a2.6 2.6 0 1 1-2.6-2.6c.2 0 .4 0 .6.1V9.9a5.3 5.3 0 1 0 4.6 5.2V8.4a6.6 6.6 0 0 0 4 1.4V7.2a4.1 4.1 0 0 0-4-4.2z"/></svg>
+    <span>Support</span>
+  </a>
+  <button class="tt-notif-skip" id="ttNotifSkip" type="button">Nanti Saja</button>
+  <div class="tt-notif-countdown">
+    <div class="tt-notif-progress-track"><div class="tt-notif-progress" id="ttNotifProgress"></div></div>
+    <p class="tt-notif-timer-text">Auto-close in <span id="ttNotifTimer">10</span>s</p>
+  </div>
+</div>
+
+<div class="music-overlay" id="musicOverlay" aria-hidden="true"></div>
+<div class="music-modal" id="musicModal" role="dialog" aria-modal="true" aria-labelledby="musicTitle" aria-hidden="true">
+  <div class="music-header">
+    <div class="music-header-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    </div>
+    <div class="music-header-title" id="musicTitle">Music</div>
+    <button class="music-close" id="musicClose" type="button" aria-label="Tutup music">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <div class="music-player">
+    <div class="music-now">
+      <div class="music-now-icon" id="musicNowIcon">♪</div>
+      <div class="music-now-text">
+        <span class="music-now-label">Now Playing</span>
+        <span class="music-now-title" id="musicNowTitle">Belum ada lagu</span>
+      </div>
+    </div>
+    <input class="music-seek" id="musicSeek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek">
+    <div class="music-time">
+      <span id="musicCurrentTime">0:00</span>
+      <span id="musicDuration">0:00</span>
+    </div>
+    <div class="music-controls">
+      <button class="music-btn" id="musicPrevBtn" type="button" aria-label="Sebelumnya" disabled>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+      </button>
+      <button class="music-btn music-btn-play" id="musicPlayBtn" type="button" aria-label="Play">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <button class="music-btn" id="musicNextBtn" type="button" aria-label="Berikutnya" disabled>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+      </button>
+    </div>
+    <div class="music-volume-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+      <input class="music-volume" id="musicVolume" type="range" min="0" max="100" value="100" aria-label="Volume">
+    </div>
+  </div>
+
+  <div class="music-upload-row">
+    <button class="music-upload-btn" id="musicUploadBtn" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      Upload Lagu
+    </button>
+    <input class="music-input" id="musicInput" type="file" accept="audio/*" multiple>
+  </div>
+
+  <div>
+    <div class="music-playlist-label">Playlist</div>
+    <div class="music-playlist" id="musicPlaylist">
+      <div class="music-empty">Belum ada lagu. Klik "Upload Lagu" di atas.</div>
+    </div>
+  </div>
+
+  <audio id="musicEl" preload="metadata"></audio>
+</div>
+
+<noscript>
+<div style="position:fixed;bottom:1rem;left:1rem;right:1rem;padding:1rem;background:#0d0d0d;border:1px solid rgba(255,255,255,.15);border-radius:12px;color:#a3a3a3;font-size:.85rem;text-align:center;z-index:9999;font-family:'Inter',sans-serif;line-height:1.5">
+Aktifkan JavaScript untuk pengalaman penuh — pencarian, drawer, dan music player membutuhkan JavaScript.
+</div>
+</noscript>
+
+<script>
+(function(){
+  const y=new Date().getFullYear();
+  const a=document.getElementById('year');
+  const b=document.getElementById('yearDrawer');
+  if(a)a.textContent=y;
+  if(b)b.textContent=y;
+})();
+
+let closeDrawerRef=null;
+(function(){
+const hb=document.getElementById('hamburgerBtn'),d=document.getElementById('drawer'),o=document.getElementById('drawerOverlay'),cb=document.getElementById('drawerClose');
+function open(){d.classList.add('active');o.classList.add('active');hb.classList.add('active');hb.setAttribute('aria-expanded','true');d.setAttribute('aria-hidden','false');document.body.classList.add('drawer-open')}
+function close(){d.classList.remove('active');o.classList.remove('active');hb.classList.remove('active');hb.setAttribute('aria-expanded','false');d.setAttribute('aria-hidden','true');document.body.classList.remove('drawer-open')}
+closeDrawerRef=close;
+function toggle(){if(d.classList.contains('active'))close();else open()}
+hb.addEventListener('click',toggle);
+cb.addEventListener('click',close);
+o.addEventListener('click',close);
+document.querySelectorAll('[data-drawer-link]').forEach(l=>{l.addEventListener('click',e=>{const h=l.getAttribute('href');if(h&&h.startsWith('#')){e.preventDefault();const t=document.querySelector(h);close();if(t)setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'start'}),250)}else close()})});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&d.classList.contains('active'))close()});
+})();
+
+const I={
+qr:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><line x1="14" y1="14" x2="14" y2="14.01"/><line x1="17" y1="14" x2="21" y2="14"/><line x1="14" y1="17" x2="17" y2="17"/><line x1="21" y1="17" x2="21" y2="21"/><line x1="14" y1="21" x2="14" y2="21.01"/><line x1="17" y1="21" x2="21" y2="21"/></svg>',
+image:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>',
+scan:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/></svg>',
+tiktok:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3h-2.6v12.1a2.6 2.6 0 1 1-2.6-2.6c.2 0 .4 0 .6.1V9.9a5.3 5.3 0 1 0 4.6 5.2V8.4a6.6 6.6 0 0 0 4 1.4V7.2a4.1 4.1 0 0 0-4-4.2z"/></svg>',
+instagram:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>',
+spotify:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.58 14.42a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.15a.75.75 0 1 1-.33-1.46c4.57-1.05 8.5-.6 11.66 1.33.36.22.47.68.25 1.03zm1.22-2.72a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.8c4.36-1.32 9.78-.68 13.49 1.6.44.27.58.85.31 1.29zm.1-2.83C14.05 8.57 7.72 8.36 4.02 9.48a1.13 1.13 0 1 1-.66-2.16c4.25-1.29 11.24-1.04 15.67 1.59a1.13 1.13 0 0 1-1.15 1.96z"/></svg>',
+html:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>',
+mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>',
+music:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
+news:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>',
+launch:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>'
+};
+
+const toolsData=[
+  {tag:"TOOLS",title:"MUSIC",inline:"music",icon:I.music},
+  {tag:"MAKER",title:"TT DOWNLOADER",link:"https://bkp-tete.netlify.app",icon:I.tiktok},
+  {tag:"SCANNER",title:"SCAN BARCODE",link:"https://bkp-indo.netlify.app",icon:I.scan},
+  {tag:"MAKER",title:"FAKE POST IG",link:"https://fake-pap-tt.vercel.app",icon:I.instagram},
+  {tag:"MAKER",title:"QR GENERATOR",link:"https://bkp-qr.netlify.app",icon:I.qr},
+  {tag:"IMAGE",title:"PHOTO TO URL",link:"https://photo-to-url.vercel.app",icon:I.image},
+  {tag:"MAKER",title:"FAKE NEWS",link:"#",icon:I.news},
+  {tag:"TOOLS",title:"TEMP MAIL",link:"#",icon:I.mail},
+  {tag:"TOOLS",title:"SPOTIFY DOWNLOADER",link:"#",icon:I.spotify},
+  {tag:"MAKER",title:"DEPLOY HTML",link:"#",icon:I.html}
+];
+
+let currentSearch='';
+const allCards=[];
+
+function createCard(item){
+const card=document.createElement('div');
+card.className='card';
+card.dataset.title=item.title.toLowerCase();
+card.dataset.tag=item.tag.toLowerCase();
+card.setAttribute('role','listitem');
+card.title='Kategori: '+item.tag;
+
+let launchHtml;
+if(item.inline){
+  launchHtml = `<button class="card-launch" type="button" data-inline="${item.inline}" aria-label="Launch ${item.title}"><span>Launch</span>${I.launch}</button>`;
+} else if(!item.link || item.link === '#'){
+  launchHtml = `<button class="card-launch disabled" type="button" aria-disabled="true">Coming Soon</button>`;
+} else {
+  launchHtml = `<a class="card-launch" href="${item.link}" target="_blank" rel="noopener noreferrer" aria-label="Launch ${item.title}"><span>Launch</span>${I.launch}</a>`;
+}
+
+card.innerHTML=`
+<div class="card-icon">${item.icon}</div>
+<h3 class="card-title">${item.title}</h3>
+${launchHtml}
+`;
+return card;
+}
+
+function applyFilters(){
+const term=currentSearch.trim().toLowerCase();
+let c=0;
+allCards.forEach(card=>{
+const m=term===''||card.dataset.title.includes(term)||card.dataset.tag.includes(term);
+card.style.display=m?'':'none';
+if(m)c++;
+});
+document.getElementById('emptyState').classList.toggle('visible',c===0);
+const status=document.getElementById('searchStatus');
+if(status) status.textContent = term ? (c===0 ? 'Tidak ada hasil untuk '+term : c+' hasil untuk '+term) : '';
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+const g=document.getElementById('maker-grid');
+toolsData.forEach(item=>{const c=createCard(item);g.appendChild(c);allCards.push(c)});
+
+const s=document.getElementById('searchInput'),sc=document.getElementById('searchClear');
+s.addEventListener('input',e=>{currentSearch=e.target.value;sc.classList.toggle('visible',currentSearch.length>0);applyFilters()});
+sc.addEventListener('click',()=>{s.value='';currentSearch='';sc.classList.remove('visible');s.focus();applyFilters()});
+
+const searchOverlay = document.getElementById('searchOverlay');
+const searchModal = document.getElementById('searchModal');
+const searchCloseBtn = document.getElementById('searchCloseBtn');
+const navSearchBtn = document.getElementById('navSearchBtn');
+const searchToolsBtn = document.getElementById('searchToolsBtn');
+
+function openSearchModal() {
+  searchOverlay.classList.add('show');
+  searchModal.classList.add('show');
+  searchOverlay.setAttribute('aria-hidden', 'false');
+  searchModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('search-open');
+  setTimeout(() => s.focus(), 100);
+}
+
+function closeSearchModal() {
+  searchOverlay.classList.remove('show');
+  searchModal.classList.remove('show');
+  searchOverlay.setAttribute('aria-hidden', 'true');
+  searchModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('search-open');
+}
+
+navSearchBtn.addEventListener('click', openSearchModal);
+searchCloseBtn.addEventListener('click', closeSearchModal);
+searchOverlay.addEventListener('click', closeSearchModal);
+
+searchToolsBtn.addEventListener('click', () => {
+  if(closeDrawerRef) closeDrawerRef();
+  setTimeout(openSearchModal, 250);
+});
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape' && searchModal.classList.contains('show')){
+    closeSearchModal();
+  }
+  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openSearchModal()}
+  if(e.key==='Escape'&&document.activeElement===s)sc.click();
+});
+});
+
+(function(){
+const n=document.getElementById('navbar');if(!n)return;
+let t=false,l=false;
+function u(){const s=window.scrollY>20;if(s!==l){n.classList.toggle('scrolled',s);l=s}t=false}
+window.addEventListener('scroll',()=>{if(!t){window.requestAnimationFrame(u);t=true}});
+})();
+
+(function(){
+const b=document.getElementById('scrollTop');let l=false;
+window.addEventListener('scroll',()=>{const v=window.scrollY>400;if(v!==l){b.classList.toggle('visible',v);l=v}});
+b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+})();
+</script>
+
+<script>
+(function(){
+  'use strict';
+  const overlay=document.getElementById('ttNotifOverlay');
+  const notif=document.getElementById('ttNotif');
+  const followBtn=document.getElementById('ttNotifFollow');
+  const skipBtn=document.getElementById('ttNotifSkip');
+  const progressBar=document.getElementById('ttNotifProgress');
+  const timerNum=document.getElementById('ttNotifTimer');
+  if(!overlay || !notif) return;
+  const COUNTDOWN_MS=10000;
+  let timerId=null;
+  function clearTimer(){if(timerId){clearInterval(timerId);timerId=null}}
+  function updateDisplay(remainingMs){
+    const pct=Math.max(0,Math.min(100,(remainingMs/COUNTDOWN_MS)*100));
+    if(progressBar) progressBar.style.width=pct+'%';
+    if(timerNum) timerNum.textContent=Math.ceil(remainingMs/1000);
+  }
+  function openNotif(){
+    overlay.classList.add('show');
+    notif.classList.add('show');
+    notif.setAttribute('aria-hidden','false');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.classList.add('tt-notif-open');
+    clearTimer();
+    const start=Date.now();
+    updateDisplay(COUNTDOWN_MS);
+    timerId=setInterval(function(){
+      const elapsed=Date.now()-start;
+      const remaining=COUNTDOWN_MS-elapsed;
+      if(remaining<=0){updateDisplay(0);clearTimer();closeNotif();return}
+      updateDisplay(remaining);
+    },50);
+  }
+  function closeNotif(){
+    clearTimer();
+    overlay.classList.remove('show');
+    notif.classList.remove('show');
+    notif.setAttribute('aria-hidden','true');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.classList.remove('tt-notif-open');
+  }
+  followBtn.addEventListener('click',function(){setTimeout(closeNotif,300)});
+  if(skipBtn) skipBtn.addEventListener('click', closeNotif);
+  function triggerOpen(){requestAnimationFrame(function(){setTimeout(openNotif,150)})}
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',triggerOpen)}
+  else{triggerOpen()}
+})();
+</script>
+
+<script>
+(function(){
+  'use strict';
+  const overlay=document.getElementById('musicOverlay');
+  const modal=document.getElementById('musicModal');
+  const closeBtn=document.getElementById('musicClose');
+  const input=document.getElementById('musicInput');
+  const uploadBtn=document.getElementById('musicUploadBtn');
+  const audio=document.getElementById('musicEl');
+  const playlistEl=document.getElementById('musicPlaylist');
+  const nowTitle=document.getElementById('musicNowTitle');
+  const nowIcon=document.getElementById('musicNowIcon');
+  const currentTimeEl=document.getElementById('musicCurrentTime');
+  const durationEl=document.getElementById('musicDuration');
+  const seek=document.getElementById('musicSeek');
+  const playBtn=document.getElementById('musicPlayBtn');
+  const prevBtn=document.getElementById('musicPrevBtn');
+  const nextBtn=document.getElementById('musicNextBtn');
+  const volume=document.getElementById('musicVolume');
+  if(!overlay || !modal) return;
+
+  let tracks=[];
+  let currentIndex=-1;
+  let isSeeking=false;
+
+  function formatTime(sec){
+    if(!isFinite(sec)||isNaN(sec)||sec<0) return '0:00';
+    const m=Math.floor(sec/60);
+    const s=Math.floor(sec%60);
+    return m+':'+(s<10?'0':'')+s;
+  }
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g,function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  function updatePlayBtn(){
+    if(audio.paused){
+      playBtn.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+      playBtn.setAttribute('aria-label','Play');
+      nowIcon.classList.remove('playing');
+    } else {
+      playBtn.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>';
+      playBtn.setAttribute('aria-label','Pause');
+      nowIcon.classList.add('playing');
+    }
+  }
+  function updateTime(){
+    if(isSeeking) return;
+    const cur=audio.currentTime||0;
+    const dur=audio.duration||0;
+    if(currentTimeEl) currentTimeEl.textContent=formatTime(cur);
+    if(durationEl) durationEl.textContent=formatTime(dur);
+    if(dur>0) seek.value=(cur/dur)*100;
+  }
+  function updateNav(){
+    prevBtn.disabled = tracks.length<=1;
+    nextBtn.disabled = tracks.length<=1;
+  }
+  function renderPlaylist(){
+    if(tracks.length===0){
+      playlistEl.innerHTML='<div class="music-empty">Belum ada lagu. Klik "Upload Lagu" di atas.</div>';
+      updateNav();
+      return;
+    }
+    playlistEl.innerHTML='';
+    tracks.forEach(function(t,i){
+      const item=document.createElement('div');
+      item.className='music-track'+(i===currentIndex?' active':'');
+      item.dataset.index=i;
+      item.innerHTML=
+        '<div class="music-track-icon">♪</div>'+
+        '<div class="music-track-info">'+
+          '<div class="music-track-name">'+escapeHtml(t.name)+'</div>'+
+          '<div class="music-track-meta">'+(t.durationFormatted||'--:--')+'</div>'+
+        '</div>'+
+        '<button class="music-track-remove" type="button" data-remove="'+i+'" aria-label="Hapus '+escapeHtml(t.name)+'">'+
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>'+
+        '</button>';
+      playlistEl.appendChild(item);
+    });
+    updateNav();
+  }
+  function playTrack(index){
+    if(index<0||index>=tracks.length) return;
+    if(index===currentIndex && audio.src){
+      if(audio.paused) audio.play().catch(function(){});
+      else audio.pause();
+      return;
+    }
+    currentIndex=index;
+    const t=tracks[index];
+    audio.src=t.url;
+    if(nowTitle) nowTitle.textContent=t.name;
+    audio.play().catch(function(){});
+    renderPlaylist();
+    updateTime();
+  }
+
+  audio.addEventListener('loadedmetadata',function(){
+    if(currentIndex>=0 && tracks[currentIndex]){
+      tracks[currentIndex].duration=audio.duration;
+      tracks[currentIndex].durationFormatted=formatTime(audio.duration);
+      renderPlaylist();
+      updateTime();
+    }
+  });
+  audio.addEventListener('timeupdate',updateTime);
+  audio.addEventListener('play',function(){updatePlayBtn();renderPlaylist()});
+  audio.addEventListener('pause',function(){updatePlayBtn();renderPlaylist()});
+  audio.addEventListener('ended',function(){
+    if(currentIndex<tracks.length-1) playTrack(currentIndex+1);
+    else {updatePlayBtn();renderPlaylist()}
+  });
+
+  playBtn.addEventListener('click',function(){
+    if(currentIndex<0){if(tracks.length>0)playTrack(0);return}
+    if(audio.paused) audio.play().catch(function(){});
+    else audio.pause();
+  });
+  prevBtn.addEventListener('click',function(){
+    if(currentIndex>0) playTrack(currentIndex-1);
+    else if(audio.currentTime>3) audio.currentTime=0;
+  });
+  nextBtn.addEventListener('click',function(){
+    if(currentIndex<tracks.length-1) playTrack(currentIndex+1);
+  });
+
+  seek.addEventListener('input',function(){
+    isSeeking=true;
+    const dur=audio.duration||0;
+    if(currentTimeEl) currentTimeEl.textContent=formatTime((seek.value/100)*dur);
+  });
+  seek.addEventListener('change',function(){
+    const dur=audio.duration||0;
+    if(dur>0) audio.currentTime=(seek.value/100)*dur;
+    isSeeking=false;
+  });
+  volume.addEventListener('input',function(){
+    audio.volume=volume.value/100;
+  });
+
+  playlistEl.addEventListener('click',function(e){
+    const removeBtn=e.target.closest('[data-remove]');
+    if(removeBtn){
+      e.stopPropagation();
+      const idx=parseInt(removeBtn.dataset.remove,10);
+      const t=tracks[idx];
+      if(t && t.url){
+        try{URL.revokeObjectURL(t.url)}catch(err){}
+      }
+      tracks.splice(idx,1);
+      if(currentIndex===idx){
+        audio.pause();
+        audio.removeAttribute('src');
+        audio.load();
+        currentIndex=-1;
+        if(nowTitle) nowTitle.textContent='Belum ada lagu';
+        if(currentTimeEl) currentTimeEl.textContent='0:00';
+        if(durationEl) durationEl.textContent='0:00';
+        seek.value=0;
+      } else if(currentIndex>idx){
+        currentIndex--;
+      }
+      renderPlaylist();
+      return;
+    }
+    const trackItem=e.target.closest('.music-track');
+    if(!trackItem) return;
+    playTrack(parseInt(trackItem.dataset.index,10));
+  });
+
+  uploadBtn.addEventListener('click',function(){input.click()});
+  input.addEventListener('change',function(e){
+    const files=Array.from(e.target.files||[]);
+    let added=0;
+    files.forEach(function(file){
+      if(!file.type.startsWith('audio/')) return;
+      const url=URL.createObjectURL(file);
+      tracks.push({
+        name:file.name.replace(/\.[^.]+$/,''),
+        url:url,
+        duration:0,
+        durationFormatted:'--:--'
+      });
+      added++;
+    });
+    e.target.value='';
+    if(added>0){
+      renderPlaylist();
+      if(currentIndex<0) playTrack(0);
+    }
+  });
+
+  function open(){
+    overlay.classList.add('show');
+    modal.classList.add('show');
+    overlay.setAttribute('aria-hidden','false');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('music-open');
+    renderPlaylist();
+    updatePlayBtn();
+    updateTime();
+    audio.volume=volume.value/100;
+  }
+  function close(){
+    overlay.classList.remove('show');
+    modal.classList.remove('show');
+    overlay.setAttribute('aria-hidden','true');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('music-open');
+  }
+
+  closeBtn.addEventListener('click',close);
+  overlay.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&modal.classList.contains('show'))close();
+  });
+
+  window.openMusic=open;
+  renderPlaylist();
+  updatePlayBtn();
+})();
+</script>
+
+<script>
+document.body.addEventListener('click',function(e){
+  const btn=e.target.closest('[data-inline]');
+  if(!btn) return;
+  const tool=btn.dataset.inline;
+  if(tool==='music' && window.openMusic) window.openMusic();
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const clockEl = document.getElementById('live-clock');
+    function updateClock() {
+        const now = new Date();
+        const h = String(now.getHours()).padStart(2, '0');
+        const m = String(now.getMinutes()).padStart(2, '0');
+        const s = String(now.getSeconds()).padStart(2, '0');
+        if(clockEl) clockEl.textContent = `${h}:${m}:${s}`;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    const osEl = document.getElementById('device-os');
+    const ua = navigator.userAgent;
+    let os = "Unknown";
+    if (/android/i.test(ua)) os = "Android";
+    else if (/iPad|iPhone|iPod/.test(ua)) os = "iOS";
+    else if (/Win/i.test(ua)) os = "Windows";
+    else if (/Mac/i.test(ua)) os = "MacOS";
+    else if (/Linux/i.test(ua)) os = "Linux";
+    if(osEl) osEl.textContent = os;
+
+    const browserEl = document.getElementById('browser-name');
+    let browser = "Unknown";
+    if (/chrome|crios/i.test(ua) && !/edge|edg/i.test(ua)) browser = "Chrome";
+    else if (/firefox|fxios/i.test(ua)) browser = "Firefox";
+    else if (/safari/i.test(ua) && !/chrome|crios/i.test(ua)) browser = "Safari";
+    else if (/edg/i.test(ua)) browser = "Edge";
+    else if (/opr|opera/i.test(ua)) browser = "Opera";
+    if(browserEl) browserEl.textContent = browser;
+
+    const batteryEl = document.getElementById('battery-level');
+    if (navigator.getBattery) {
+        navigator.getBattery().then(function(battery) {
+            function updateBattery() {
+                const level = Math.round(battery.level * 100);
+                if(batteryEl) batteryEl.textContent = level + '%';
+            }
+            updateBattery();
+            battery.addEventListener('levelchange', updateBattery);
+        }).catch(function() {
+            if(batteryEl) batteryEl.textContent = "N/A";
+        });
+    } else {
+        if(batteryEl) batteryEl.textContent = "N/A";
+    }
+});
+</script>
+</body>
+</html>
